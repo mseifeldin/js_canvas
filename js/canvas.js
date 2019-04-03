@@ -12,14 +12,34 @@
 
         mouse.x = e.pageX - this.offsetLeft;
         mouse.y = e.pageY - this.offsetTop;
+
+
+    }, false);
+    
+    /*Get touch*/
+    canvas.addEventListener('touchmove', function(e) {
+        last_mouse.x = mouse.x;
+        last_mouse.y = mouse.y;
+
+        mouse.x = e.pageX - this.offsetLeft;
+        mouse.y = e.pageY - this.offsetTop;
+
+
     }, false);
 
 
     /* Base Values */
+
+    canvas.width = window.innerWidth * .8;
+    console.log(canvas.width);
+    console.log(window.innerWidth);
+
+
     ctx.lineWidth = 5;
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
     ctx.strokeStyle = 'red';
+
 
     /* Keyboard Commands */
     document.onkeydown = function(event) {
@@ -58,6 +78,10 @@
     /* Draw */
     canvas.addEventListener('mousemove', function(e) {
         canvas.addEventListener('mousemove', onPaint, false);
+    }, false);
+
+    canvas.addEventListener('touchmove', function(e) {
+        canvas.addEventListener('touchmove', onPaint, false);
     }, false);
 
 
