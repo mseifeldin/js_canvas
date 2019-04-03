@@ -15,7 +15,7 @@
 
 
     }, false);
-    
+
     /*Get touch*/
     canvas.addEventListener('touchmove', function(e) {
         last_mouse.x = mouse.x;
@@ -26,6 +26,8 @@
 
 
     }, false);
+
+
 
 
     /* Base Values */
@@ -75,6 +77,21 @@
             break;
     }
 };
+
+    /*Get color picker*/
+    function selectColor(){
+      ctx.strokeStyle= document.getElementById("colorPicker").value
+    }
+    
+    /* Clear on mobile orientation change */
+    window.addEventListener("orientationchange", function(e){
+      windowWidth = window.outerWidth;
+          windowHeight = window.outerHeight;
+          c.width = 0.8 * windowWidth;
+          c.height = 0.8 * windowHeight;
+    })
+
+
     /* Draw */
     canvas.addEventListener('mousemove', function(e) {
         canvas.addEventListener('mousemove', onPaint, false);
