@@ -89,10 +89,11 @@
 
     /* Clear on mobile orientation change */
     window.addEventListener("orientationchange", function(e){
-      windowWidth = window.outerWidth;
-          windowHeight = window.outerHeight;
-          c.width = 0.8 * windowWidth;
-          c.height = 0.8 * windowHeight;
+      location.reload()
+      // windowWidth = window.outerWidth;
+      //     windowHeight = window.outerHeight;
+      //     c.width = 0.8 * windowWidth;
+      //     c.height = 0.8 * windowHeight;
     })
 
 
