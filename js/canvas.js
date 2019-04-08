@@ -1,6 +1,7 @@
 (function() {
     var canvas = document.querySelector('canvas');
     var ctx = canvas.getContext('2d');
+    var input = document.querySelector('input');
 
     var mouse = {x: 0, y: 0};
     var last_mouse = {x: 0, y: 0};
@@ -79,10 +80,13 @@
 };
 
     /*Get color picker*/
-    function selectColor(){
-      ctx.strokeStyle= document.getElementById("colorPicker").value
+    input.addEventListener('input', function(e){
+      console.log('function called')
+      ctx.strokeStyle = input.value;
     }
+      )
     
+
     /* Clear on mobile orientation change */
     window.addEventListener("orientationchange", function(e){
       windowWidth = window.outerWidth;
